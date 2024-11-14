@@ -1,0 +1,649 @@
+\documentclass[portrait, 8pt, a4paper, oneside, twocolumn]{extarticle}
+\usepackage{teamnote}
+
+\usepackage[hangul]{kotex}
+
+\usepackage[most]{tcolorbox}
+
+\usepackage{multirow}
+\usepackage{adjustbox}
+% \usepackage{amsmath}
+
+% \usepackage{etoolbox}
+% \AtBeginEnvironment{align*}{%
+
+% \setlength{\abovedisplayskip}{0pt}
+% \setlength{\belowdisplayskip}{0pt}
+% \setlength{\abovedisplayshortskip}{0pt}
+% \setlength{\belowdisplayshortskip}{0pt}
+
+% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{enumitem}
+
+\setlistdepth{9}
+\newlist{IdeaNote}{enumerate}{6}
+\setlist[IdeaNote]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
+\setlist[IdeaNote, 1]{label= \Roman*. }
+\setlist[IdeaNote, 2]{label= \Alph*. }
+\setlist[IdeaNote, 3]{label= \arabic*. }
+\setlist[IdeaNote, 4]{label= \roman*) }
+\setlist[IdeaNote, 5]{label= \alph*) }
+\setlist[IdeaNote, 6]{label= \arabic*) }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\teamnote{POSTECH}{ConForza}{}
+
+\ShowUsage
+\ShowComplexity
+\HideAuthor
+
+\begin{document}
+
+\maketitlepage
+
+\pagebreak 
+
+
+\section{Have you...}
+
+\subsection{tried...}
+
+\begin{itemize}
+    \item \textcolor{red}{\textbf{Reading the problem once more?}}
+    \item doubting ``obvious" things?
+    \item writing obivous things?
+    \item radical greedy approach?
+    \item thinking in reverse direction?
+    \item a greedy algorithm?
+    \item network flow when your greedy algorithms stuck?
+    \item a dynamic programming?
+    \item checking the range of answer?
+    \item random algorithm?
+    \item graph modeling using states?
+    \item inverting state only on odd indexes?
+    \item calculating error bound on a real number usage?
+\end{itemize}
+
+\subsection{checked...}
+
+\begin{itemize}
+    \item \textcolor{red}{\textbf{you have read the statement correctly?}}
+    \item typo copying the team note?
+    \item initialization on multiple test case problem?
+    \item additional information from the problem?
+    \item undefined behavior?
+    \item overflow?
+    \item function without return value?
+    \item real number error?
+    \item implicit conversion?
+    \item comparison between signed and unsigned integer?
+\end{itemize}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorithmic Idea Note}
+
+\begin{tcolorbox}[breakable, enhanced, sharp corners, colback=white, colframe=black, boxrule=1pt, left=0pt]
+
+\begin{IdeaNote}
+\item Complete Search: Backtracking \& Pruning
+
+\item Math
+    \begin{IdeaNote}
+    \item Number Theory
+        \begin{IdeaNote}
+        \item Prime Number
+            \begin{IdeaNote}
+            \item Sieve of Eratosthenes, Prime Factorization
+            \item Fast Prime Verdict; Millar-Rabin
+            \item Fast Prime Factorization; Pollad Rho
+            \end{IdeaNote}
+        \item Extended Euclidean Algorithm; Diophantos Equation
+        \item Chinese Remainder Theorem
+        \item Harmonic Lemma
+        \item Floor Sum (Sum of Rational Arithmetic Sequence)
+        \item Several Sieves
+        \end{IdeaNote}
+    \item Linear Programming
+        \begin{IdeaNote}
+        \item Solve (some) LP with Shortest Path
+        \end{IdeaNote}
+    \item FFT \& Polynomials
+        \begin{IdeaNote}
+        \item FFT : Convolution
+            \begin{IdeaNote}
+            \item High precision FFT with modulo 1e9+7
+            \end{IdeaNote}
+        \item NTT : Number Theoretic Tranform
+        \item Quotient Ring (Formal Power Series)
+            \begin{IdeaNote}
+            \item Multiplication
+            \item FPS : Inverse / Division
+            \item Integration / Differentiation
+            \item FPS : Logarithm / Exponentiation
+            \item FPS : Power of Polynomial
+            \item Division - Quotient \& Remainder
+            \item Polynomial Taylor Shift
+            \item Multipoint Evaluation
+            \end{IdeaNote}
+        \end{IdeaNote}
+    \item Combinatorics
+        \begin{IdeaNote}
+        \item Labeled Combinatorial Target
+        \item The Twelvefold Way (12정도)
+        \item Generating Function
+        \end{IdeaNote}
+    \end{IdeaNote}
+\item Linear Algebra
+
+\item Geometry
+    \begin{IdeaNote}
+    \item Basic Tools
+        \begin{IdeaNote}
+        \item Outer Product (CCW)
+        \item Sorting by Polar
+        \item Segment Intersection
+        \item Closest Point
+        \item Furthest Point
+        \end{IdeaNote}
+    \item Convex Polygon (Convex Hull)
+        \begin{IdeaNote}
+        \item Convex Hull Construction
+        \item Convex Layer
+        \item Rotating Calipers
+        \item Point Containment
+        \item Tangent to convex polygon
+        \item Inner and Outer Tangent of two Convex's
+        \end{IdeaNote}
+    \item General Polygon
+    \item Half Plane Intersection
+    \item Delaunay Triangulation : Voronoi diagram
+    \end{IdeaNote}
+
+
+\item Greedy
+    \begin{IdeaNote}
+    \item Rearrangement Inequality
+    \end{IdeaNote}
+
+\item DP
+    \begin{IdeaNote}
+    \item DP Optimization
+        \begin{IdeaNote}
+        \item Convex Hull Trick
+        \item Alien's Trick (Lagrangian Relaxation)
+        \item Slope Trick
+        \end{IdeaNote}
+    \end{IdeaNote}
+
+\item String
+    \begin{IdeaNote}
+    \item KMP(Knuth-Morris-Pratt), Z, Manacher Algorithm
+    \item Trie
+    \item Aho-Corasick
+    \item Suffix Array \& LCP Array
+    \item Eertree
+    \item Wavelet Tree
+    \end{IdeaNote}
+
+\item Graph
+    \begin{IdeaNote}
+    \item Searching : DFS/BFS
+    \item DAG(Directed Acyclic Graph) : Topological Sorting
+    \item MST(Minimum Spanning Tree)
+        \begin{IdeaNote}
+        \item Kruskal Algorithm
+        \item Prim Algorithm
+        \item Euclidian MST
+        \end{IdeaNote}
+    \item Shortest Path
+        \begin{IdeaNote}
+        \item Dijkstra Algorithm
+        \item Bellman-Ford Algorithm
+        \item Floyd-Warshall Algorithm
+        \item Shortest Path DAG
+        \end{IdeaNote}
+    \item Connectivity
+        \begin{IdeaNote}
+        \item Offline Dynamic Connectivity (Odc)
+        \item Online Dynamic Connectivity
+            \begin{IdeaNote}
+            \item Euler Tour Tree
+            \item Top Tree
+            \end{IdeaNote}
+        \end{IdeaNote}
+    \item DFS tree
+        \begin{IdeaNote}
+        \item SCC(Strongly Connected Component)
+            \begin{IdeaNote}
+            \item Graph Compression
+            \item 2-SAT Problem
+            \item Offline Incremental SCC
+            \end{IdeaNote}
+        \item BCC (BiConnected Component)
+            \begin{IdeaNote}
+            \item Blcok Cut Tree
+            \item Cactus Graph
+            \end{IdeaNote}
+        \item Articulation Points and Bridges
+        \end{IdeaNote}
+    \item Network Flow
+        \begin{IdeaNote}
+        \item Ford-Fulkerson/Edmonds-Karp Algorithm
+        \item Dinic's Algorithm
+        \item Push-Relabel Algorithm
+        \item MCMF(Minimum Cost Maximum Flow)
+        \item Minimum s-t Cut = Maximum Flow
+        \item Bipartite Matching
+            \begin{IdeaNote}
+            \item Minimum Vertex Cover on Bipartite
+            \item Maximum Independent Set on Bipartite
+            \item Minimum Path Cover on DAG
+            \item Maximum Antichain on DAG
+            \end{IdeaNote}
+        \item Circulation
+        \item General Matching
+        \end{IdeaNote}
+    \item Treewidth
+    \end{IdeaNote}
+        
+\item Tree
+    \begin{IdeaNote}
+    \item LCA(Lowest Common Ancestor)
+    \item Heavy-Light Decomposition
+    \item Centroid Decomposition
+    \item Link-Cut Tree
+    \end{IdeaNote}
+
+\item Data Structure
+    \begin{IdeaNote}
+    \item C++ Standard Library
+        \begin{IdeaNote}
+        \item Stack, Queue, List, Vector, Deque
+        \item Priority Queue; Heap
+        \item Set, Map : Binary Search Tree
+        \item Unordered Set, Unordered Map : Hashing
+        \item PBDS(Policy-Based Data Structure)
+        \item Rope (Cord)
+        \end{IdeaNote}
+    \item Disjoint Set (Unoin-Find structure)
+        \begin{IdeaNote}
+        \item Union by Rank / Path Compression
+        \item UF with LCA (Making Root)
+        \item UF with Edge Weight
+        \item UF with Unjoining
+            \begin{IdeaNote}
+            \item Unjoin from latest (Stack undoing)
+            \item Unjoin from earliest (Queue undoing)
+            \item Unjoin by Priority (Priority undoing)
+            \end{IdeaNote}
+        \end{IdeaNote}
+    \item Sparse Table
+    \item Range Query Structure
+        \begin{IdeaNote}
+        \item Square Root Decomposition
+        \item Fenwick Tree
+        \item Segment Tree
+            \begin{IdeaNote}
+            \item Lazy Propagation \& Generalization
+            \item 금광 ST (Maximum Adjacent Sum of Given Range)
+            \item PST (Persistent Segment Tree)
+            \item MST (Merge Sort Tree)
+            \item Segment Tree on Tree (HLD)
+            \item Li-Chao Tree (Segment Add Get Min)
+            \item ST Beats
+            \item Kinetic ST
+            \end{IdeaNote}
+        \item Splay Tree
+            \begin{IdeaNote}
+            \item Range Reverse / Range Shift
+            \end{IdeaNote}
+        \end{IdeaNote}
+    \end{IdeaNote}
+
+\item Sorting \& Searching
+    \begin{IdeaNote}
+    \item Sorting
+    \item Searching
+        \begin{IdeaNote}
+        \item Binary Search : Monotone Sequence / function
+            \begin{IdeaNote}
+            \item Lower bount / Upper bound
+            \item LIS (Longest Increasing Subsequence)
+            \item PBS (Parallel Binary Search)
+            \end{IdeaNote}
+        \item Ternary Search : Unimodal Sequence / function
+            \begin{IdeaNote}
+            \item Fibonacci Search (Golden Ratio Search)
+            \end{IdeaNote}
+        \end{IdeaNote}
+    \end{IdeaNote}
+
+\item Numerical Analysis
+    \begin{IdeaNote}
+    \item Numerical Differentiation
+    \item Gradient Descent
+    \end{IdeaNote}
+
+\item Technic
+    \begin{IdeaNote}
+    \item Coordinate Compression
+    \item Two Pointer/Sliding Window
+    \item Sweeping
+    \item Meet in the Middle
+    \item Bitmasking
+    \item Small to Large
+    \item Randomization
+        \begin{IdeaNote}
+        \item Verifying Matrix Multiplication
+        \end{IdeaNote}
+    \item Query Technic
+        \begin{IdeaNote}
+        \item Offline Query
+            \begin{IdeaNote}
+            \item Mo's Algorithm
+            \end{IdeaNote}
+        \end{IdeaNote}
+    \end{IdeaNote}
+
+\end{IdeaNote}
+
+\end{tcolorbox}
+
+\Algorithm{Some Rules}
+{}{}{cpp}{source/Fundemental.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Math}
+
+\subsection{Prime Number}
+
+\subsubsection{Distribution of Prime Number}
+
+\begin{center}
+    \begin{tabular}{|
+    >{\columncolor[HTML]{BFBFBF}}c |c|
+    >{\columncolor[HTML]{BFBFBF}}c |c|
+    >{\columncolor[HTML]{BFBFBF}}c |c|}
+    \hline
+    1e2 & 25    & 1e6 & 78,498        & 1e10 & \textless 5e8  \\ \hline
+    1e3 & 168   & 1e7 & 664,579       & 1e11 & \textless 5e9  \\ \hline
+    1e4 & 1,229 & 1e8 & \textless 6e6 & 1e12 & \textless 4e10 \\ \hline
+    1e5 & 9,592 & 1e9 & \textless 6e7 & 1e13 & \textless 4e11 \\ \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Prime Gap}
+\begin{align*}
+    2 \cdot 10^{5} \text{ 이하의 소수 간극 }  &\le 100\\
+    2^{32} \text{ 이하의 소수 간극 } &\le 464 \\
+    2^{64} \text{ 이하의 소수 간극 } &\le 1550
+\end{align*}
+
+\Algorithm{Miller-Rabin Algorithm}
+{\texttt{is\_p(X)} : returns true if $X$ is prime, otherwise false.
+\begin{align*} 
+\text{ When } X \le 2^{32}, D &= \{2, 7, 61\} \text{ is sufficient; } \\
+X \le 2^{64},  D &= \{p | p \text{ is prime}, p \le 37 \}  \text{  is sufficient.}
+\end{align*}}
+{$\mathcal O (\log^3 X)$}
+{cpp}
+{source/Math/MillerRabin.cpp}
+
+\Algorithm{Pollad Rho Algorithm}
+{ \texttt{po\_rho(N)} : returns array of prime factors of X.}
+{$\mathcal O (N^{1/4})$}
+{cpp}
+{source/Math/PolladRho.cpp}
+
+\Algorithm{Diopantos Equation(Extended Euclidian Algorithm)}
+{\texttt{diophantos(a, b)} : return one integer solution of $ax+by=1$, satisfying $0 \le x < b$. }
+{$\mathcal O \left(\log \left( \max(a, b) \right) \right)$}
+{cpp}
+{source/Math/Diophantos.cpp}
+
+\Algorithm{Chinese Remainder Theorem}
+{\texttt{crt(pll p, pll q)} : return \texttt{pll r}, satisfying follows:
+\begin{align*}
+   x &\equiv \texttt{p.fi} \mod \texttt{p.se} \\
+\text{and } x &\equiv \texttt{q.fi} \mod \texttt{q.se} \\
+   \leftrightarrow x &\equiv \texttt{r.fi} \mod \texttt{r.se} 
+\end{align*}
+If there's no such \texttt{r}, return $\{-1, -1\}$.
+}
+{$\mathcal O(\log A)$}
+{cpp}
+{source/Math/CRT.cpp}
+
+\Algorithm{Harmonic Lemma}
+{\texttt{f(N)} : return the value 
+$$\sum_{i=1}^{N} \left\lfloor \frac{N}{i} \right\rfloor = \left\lfloor \frac{N}{1}\right\rfloor + \left\lfloor \frac{N}{2} \right\rfloor + \cdots + \left\lfloor \frac{N}{N}\right\rfloor  $$}
+{$\mathcal O(\sqrt N )$}
+{cpp}
+{source/Math/Harmonic.cpp}
+
+\Algorithm{Floor Sum (Sum of Floor of Ratinoal Arithmetic Sequence)}
+{\texttt{floor\_sum(A, B, C, N)} : retun the value 
+$$\sum_{x=1}^{N} \left\lfloor  \frac{Ax+B}{C} \right\rfloor $$}
+{$\mathcal O(\log N)$}
+{cpp}
+{source/Math/FloorSum.cpp}
+
+\Algorithm{FFT - Convolution}
+{}
+{$\mathcal O (N\log N)$}
+{cpp}
+{source/Math/FFTConv.cpp}
+
+
+
+\Algorithm{NTT - Number Theoretic Transform}
+{helloworld}
+{}
+{cpp}
+{source/Math/NTT.cpp}
+
+\subsubsection{Good prime numbers to run NTT}
+\begin{center}
+\begin{adjustbox}{width=0.8\columnwidth}
+\begin{tabular}{|c|c|
+>{\columncolor[HTML]{C0C0C0}}l |}
+\hline
+595 591 169   & 71\textless{}\textless{}23|1  & \cellcolor[HTML]{C0C0C0}                               \\ \cline{1-2}
+645 922 817   & 77\textless{}\textless{}23|1  & \cellcolor[HTML]{C0C0C0}                               \\ \cline{1-2}
+897 581 057   & 107\textless{}\textless{}23|1 & \cellcolor[HTML]{C0C0C0}                               \\ \cline{1-2}
+998 244 353   & 119\textless{}\textless{}23|1 & \cellcolor[HTML]{C0C0C0}                               \\ \cline{1-2}
+1 300 234 241 & 155\textless{}\textless{}23|1 & \cellcolor[HTML]{C0C0C0}                               \\ \cline{1-2}
+1 224 736 769 & 73\textless{}\textless{}24|1  & \cellcolor[HTML]{C0C0C0}                               \\ \cline{1-2}
+2 130 706 433 & 127\textless{}\textless{}24|1 & \cellcolor[HTML]{C0C0C0}                               \\ \cline{1-2}
+167 772 161   & 5\textless{}\textless{}25|1   & \cellcolor[HTML]{C0C0C0}                               \\ \cline{1-2}
+469 762 049   & 7\textless{}\textless{}26|1   & \multirow{-9}{*}{\cellcolor[HTML]{C0C0C0}$\omega$ = 3} \\ \hline
+\end{tabular}
+\end{adjustbox}
+\end{center}
+
+\Algorithm{Polynomial (Formal Power Series)}
+{}
+{}
+{cpp}
+{source/Math/Polynomial.cpp}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Linear Algebra}
+\subsection{Matrix Multiplication}
+\texttt{k-i-j} 순서가 가장 Cache-Friendly 함.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Geometry}
+
+\Algorithm{Mindset}
+{}
+{$\mathcal O(N?)$}
+{cpp}
+{source/Geometry/Mindset.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Greedy}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{DP}
+
+% \Algorithm{}
+% {}
+% {$\mathcal O(N?)$}
+% {cpp}
+% {source/}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{String}
+
+\Algorithm{F, Z, M, SA(Suffix Array), LCP(Longest Common Prefix)}
+{For string s(1-indexed) of length N;
+\begin{align*}
+\texttt{F[i] = }& \text{maximum } k<i && \text{ s.t. }  s[1\dots k] = s[i-k+1 \dots i]\\
+\texttt{Z[i] = }& \text{maximum } k && \text{ s.t. }  s[1\dots k] = s[i \dots i+k-1]\\
+\texttt{M[i] = }& \text{maximum } k && \text{ s.t. }  s[i-k+1 \dots i+k-1] \text{ is palindrom.}\\
+\texttt{SA[i] = }& k && \text{ s.t. }  s[k\dots N] \text{ is the } i^{th} \text{ smallest of } \\
+& && \{s[1\dots N],\; s[2\dots N],\; \cdots,\; s[N\dots N]\}\\
+\texttt{LCP[i] = }& \text{maximum } k && \text{ s.t. } s[SA[i-1]\dots SA[i-1]+k-1]\\
+& && = s[SA[i] \dots SA[i]+k-1]
+\end{align*}
+}
+{$\mathcal O(N),\mathcal O(N),\mathcal O(N),\mathcal O(N\log N),\mathcal O(N)$, respectively}
+{cpp}
+{source/String/F_Z_M_SA_LCP.cpp}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Graph}
+
+\Algorithm{SCC - Tarjan Algorithm}
+{\texttt{scn[i]} : SCC number of node $i$, \texttt{nscc} : the number of SCCs}
+{}
+{cpp}
+{source/Graph/TarjanSCC.cpp}
+
+\Algorithm{Bipartite Matching - with DFS}
+{Let's say that graph is bipartite. And Let's say that one group is $A$, and the other graph is $B$. $|A|=N$, $|B|=M$. \texttt{matching(c = s)} : add one matching from $s \in A$. If successfully matched, return true; otherwise return false. \texttt{selby[i] = } store $s\in A$, s.t. $i\in B$ is matched with $s$. \\ (e.g.) \texttt{forr(i, n) ans += matching(c=i);}}
+{$\mathcal O(VE)$}
+{cpp}
+{source/Graph/BipartiteMatching.cpp}
+
+\subsubsection{Minimum Vertex Cover on Bipartite Graph(Kőnig's Therorem)}
+On bipartite graph, $$|\texttt{Minimum Vertex Cover}| = |\texttt{Maximum Matching}|$$
+
+To find Minimum Vertex Cover, ( \added )
+
+\subsubsection{Maximum Independent Set on Bipartite Graph}
+On bipartite graph, $$|\texttt{Maximum Independent Set}|=|V|-|\texttt{Maximum Matching}|$$
+
+* Note : Complement of the Vertex Cover is the Independent Set.
+
+\subsubsection{Minimum Path Cover on DAG}
+Let's think about the bipartite graph, with vertex set A and B, satisfying follow property:
+
+\begin{itemize}
+    \item If there's edge from node $i$ to node $j$ on DAG, then there's edge connecting $i^{th}$ node of A and $j^{th}$ node of B, and vice versa.
+\end{itemize}
+
+Then following holds:
+
+$|\texttt{Minimum Path Cover of DAG}| = |\texttt{Maximum Matching on Bipartite Graph}|$ 
+
+
+\subsubsection{Maximum Antichain on DAG(Dilworth's Theorem)}
+On DAG, $$|\texttt{Minimum Path Cover}| = |\texttt{Maximum Antichain}|$$
+
+
+\Algorithm{Network Flow - Dinic}
+{Construct graph with \texttt{connect(from, to, capacity, isDirected);}. Find the flow from $S$ to $T$ with \texttt{flow(S, T);}. }
+{$\mathcal O(V^2E)$, but it works like magic.}
+{cpp}
+{source/Graph/Dinic.cpp}
+
+\Algorithm{MCMF - with SPFA}
+{Construct graph with \texttt{connect(from, to, capacity, cost);}. Find the maximum flow and corresponding minimum cost from $S$ to $T$ with \texttt{flow(S, T);}.}
+{$\mathcal O(VEf)$, but it works like magic.}
+{cpp}
+{source/Graph/MCMF.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tree}
+
+\Algorithm{HLD(Heavy Light Decomposition)}
+{}
+{}
+{cpp}
+{source/Tree/HLD.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Data Structure}
+
+\Algorithm{PBDS - Policy-Based Data Structure}
+{}
+{Equivalent to std::set}
+{cpp}
+{source/DS/PBDS.cpp}
+
+\Algorithm{rope}{}{}{cpp}{}
+
+\Algorithm{Union and Find - Queue Undoing}
+{}
+{$\mathcal O(\log^2N)$}
+{cpp}
+{source/DS/UF_QUndo.cpp}
+
+\Algorithm{Segment Tree Generalization}
+{}
+{$\mathcal O(\log N)$}
+{cpp}
+{source/DS/SegmentTree.cpp}
+
+\Algorithm{Li-Chao Tree}
+{}
+{}
+{cpp}
+{source/DS/LiChaoTree.cpp}
+
+\Algorithm{Splay Tree}
+{}
+{}
+{cpp}
+{source/DS/SplayTree.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Numerical Analysis}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Technic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Misc}
+
+\Algorithm{Fast Input}
+{Fast Input with fread. Do not use with scanf, cin, or other input function. Use \texttt{forr(i, n) read(arr[i]);} instead of \texttt{forr(i, n) scanf("\%d", arr+i);}. Use \texttt{read(s+1)} instead of \texttt{scanf("\%s", s+1);}.}
+{}
+{cpp}
+{source/Misc/FastI.cpp}
+
+\Algorithm{MT19937 Random Number}
+{}
+{}
+{cpp}
+{source/Misc/mt19937.cpp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\bigskip
+--- Document end ---
+\end{center}
+
+\end{document}
